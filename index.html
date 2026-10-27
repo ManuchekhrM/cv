@@ -222,11 +222,15 @@ h2::before { content: ""; display: block; width: 44px; height: 4px; border-radiu
 .tags span { font-size: 14px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
 .skills dt { font-weight: 600; margin-top: 16px; }
 .skills dd { margin: 4px 0 0; color: var(--muted); }
-.edu { list-style: none; margin: 4px 0 0; padding: 0; }
-.edu li { padding: 8px 0; border-top: 1px solid var(--line); }
-.edu li:first-child { border-top: 0; padding-top: 2px; }
-.edu b { color: var(--ink); font-weight: 600; }
-.edu span { margin-left: 10px; font-size: 14px; color: var(--muted); }
+.edu-card { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--pine); border-radius: 22px; padding: 24px 26px; align-self: start; }
+.edu-card h3 { margin-bottom: 14px; }
+.edu { list-style: none; margin: 0; padding: 0; }
+.edu li { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.edu li:first-child { border-top: 0; padding-top: 0; }
+.edu-deg { justify-self: start; font-size: 13px; font-weight: 600; color: var(--pine); background: var(--pine-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 6px; }
+.edu-years { font-size: 14px; color: var(--muted); white-space: nowrap; }
+.edu strong { grid-column: 1 / -1; font-weight: 600; }
+.edu em { grid-column: 1 / -1; font-style: normal; color: var(--muted); font-size: 15px; }
 
 .contact { background: var(--pine); color: var(--paper); border-top: 0; }
 .contact h2 { color: var(--paper); }
@@ -515,20 +519,23 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       <div class="phone"><img src="img/app-home.webp" alt="Главный экран приложения «Мои Финансы»: баланс, доходы, расходы по категориям" width="920" height="2000" loading="lazy"></div>
     </div>
     <div>
-      <h3>Навыки и образование</h3>
+      <h3>Навыки</h3>
       <dl class="skills">
         <dt>Управление</dt><dd>Несколько параллельных проектов и команд, Agile, Scrum и SAFe, планирование поставки, риски, делегирование, развитие людей, работа с топ-менеджментом.</dd>
         <dt>Продукт и экономика</dt><dd>Discovery, проверка гипотез, приоритизация, метрики (MAU, retention, CAC, NTB, NTP, АКБ), P&amp;L продукта, основы A/B-тестов.</dd>
         <dt>Техника</dt><dd>Практика back-end задач на Golang, SQL, Flutter (базово), ADR и C4, ИИ-инструменты разработки, Jira, Notion, Figma, Miro.</dd>
         <dt>Языки</dt><dd>Таджикский родной, русский свободно, английский B2.</dd>
-        <dt>Образование</dt><dd><ul class="edu">
-          <li><b>Второе высшее</b><span>2026 — сейчас</span><br>Программное обеспечение и разработка ПО, Таджикский технический университет имени академика М. С. Осими</li>
-          <li><b>Магистратура</b><span>2018 — 2020</span><br>Социальная работа, Таджикский национальный университет</li>
-          <li><b>Бакалавриат</b><span>2011 — 2018</span><br>Менеджмент, РГГМУ, Санкт-Петербург</li>
-          <li><b>Курс</b><br>AI Product Manager</li>
-        </ul></dd>
         <dt>Лидерство вне работы</dt><dd>Президент Совета иностранных студентов РГГМУ, 2013–2017.</dd>
       </dl>
+    </div>
+    <div class="edu-card">
+      <h3>Образование</h3>
+      <ol class="edu">
+        <li><span class="edu-deg">Второе высшее</span><span class="edu-years">2026 — сейчас</span><strong>Программное обеспечение и разработка ПО</strong><em>Таджикский технический университет имени академика М. С. Осими</em></li>
+        <li><span class="edu-deg">Магистратура</span><span class="edu-years">2018 — 2020</span><strong>Социальная работа</strong><em>Таджикский национальный университет</em></li>
+        <li><span class="edu-deg">Бакалавриат</span><span class="edu-years">2011 — 2018</span><strong>Менеджмент</strong><em>Российский государственный гидрометеорологический университет, Санкт-Петербург</em></li>
+        <li><span class="edu-deg">Курс</span><strong>AI Product Manager</strong><em>Управление AI-продуктами и внедрение ML-решений</em></li>
+      </ol>
     </div>
   </div>
 </section>
