@@ -118,6 +118,10 @@ h2::before { content: ""; display: block; width: 44px; height: 4px; border-radiu
 .award p { color: var(--muted); margin: 0; }
 .award .award-tag { display: inline-block; font-size: 14px; font-weight: 600; color: var(--pine); background: var(--pine-soft); padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
 
+.mentor { margin-top: 16px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; background: var(--pine); color: var(--paper); border-radius: 22px; padding: 22px 30px; }
+.mentor > b { font-family: var(--display); font-size: 40px; line-height: 1; color: var(--gold); white-space: nowrap; }
+.mentor h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; color: var(--paper); }
+.mentor p { margin: 0; color: color-mix(in srgb, var(--paper) 80%, var(--pine)); }
 /* Фото с подписью внутри разделов */
 .shot { margin: 28px 0 0; max-width: 860px; }
 .shot img { display: block; width: 100%; height: auto; border-radius: 22px; }
@@ -315,7 +319,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       <div class="now"><i></i>Сейчас: Product Owner команды «Лояльность», Банк Эсхата, Душанбе</div>
       <h1><span>Манучехр</span><span>Мелибаев</span></h1>
       <p class="role">Руководитель IT-проектов и Product Owner в банковском финтехе</p>
-      <p class="lead">Почти 5 лет веду команды, которые запускают продукты и держат сроки: от цифрового банкинга для бизнеса в Alif Business до программы лояльности банка Эсхата. Соединяю управление людьми, экономику продукта и технический бэкграунд.</p>
+      <p class="lead">5 лет веду команды, которые запускают продукты и держат сроки: от цифрового банкинга для бизнеса в Alif Business до программы лояльности банка Эсхата. Соединяю управление людьми, экономику продукта и технический бэкграунд.</p>
       <div class="actions">
         <a class="btn" href="#contact">Связаться</a>
         <a class="btn ghost" href="cv-melibaev.pdf" download="CV_Мелибаев_Манучехр.pdf">Скачать PDF</a>
@@ -338,9 +342,9 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       <div class="panel on" role="tabpanel" id="p-people" aria-labelledby="t-people">
         <div class="big"><span data-count="21">21</span><small>человек в трёх Scrum-командах Core Banking</small></div>
         <ul>
-          <li>Сейчас веду команду из 11 человек и наставляю двух Product Owner.</li>
-          <li>Решаю вопросы приоритизации между Scrum-командами всего банка.</li>
-          <li>Договариваюсь так, чтобы межкомандные вопросы закрывались в короткие сроки.</li>
+          <li>Сейчас веду команду из 11 человек.</li>
+          <li>Веду наставничество двух Product Owner: прокачиваю их в бизнесе и технической части.</li>
+          <li>Решаю вопросы приоритизации между Scrum-командами всего банка, чтобы межкомандные вопросы закрывались в короткие сроки.</li>
         </ul>
       </div>
       <div class="panel" role="tabpanel" id="p-money" aria-labelledby="t-money">
@@ -373,8 +377,12 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       <div>
         <p class="award-tag">Награда банка</p>
         <h3>«Лучшая фича 2025» — Wake up bonus</h3>
-        <p>Механика нашей команды для возврата неактивных клиентов признана лучшей фичей года в банке Эсхата. Диплом подписан Председателем Правления банка.</p>
+        <p><b>Wake up bonus</b> — механика реактивации: клиенты, которые перестали пользоваться приложением, получают бонус за возвращение к операциям. Вместо кешбэка за простое пополнение команда направила бюджет на стимулирование реальных действий клиентов. Механика признана лучшей фичей года в банке Эсхата — это подтверждено дипломом за подписью Председателя Правления.</p>
       </div>
+    </div>
+    <div class="mentor reveal">
+      <b>2 PO</b>
+      <div><h3>Веду наставничество двух Product Owner</h3><p>Прокачиваю продактов других команд банка в бизнесе и технической части, чтобы они выросли в зрелых Product Owner.</p></div>
     </div>
     <div class="results">
       <div class="result reveal from-left"><b data-count="90" data-prefix="−70–" data-suffix="%">−70–90%</b><div>ручной отчётности и сверок в Alif Business<span>Алиф Банк</span></div></div>
@@ -439,7 +447,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
         <div class="body">
           <ul>
             <li>Руковожу кросс-функциональной командой из 11 человек: backend, ЦФТ, iOS и Android, QA, UI/UX, бизнес- и data-аналитик, развитие продукта; в подчинении менеджер по развитию продукта и аналитики. Зона: кешбэк, бонусы, реферальная программа, геймификация, сегментация клиентов.</li>
-            <li>Наставник для двух Product Owner других команд банка.</li>
+            <li>Веду наставничество двух Product Owner других команд банка: прокачиваю их в бизнесе и технической части.</li>
             <li>По своей инициативе ввёл планирование бэклога на квартал вперёд: 100% вех дорожной карты выполнено в срок.</li>
             <li>Перезапустил реферальную программу по итогам исследования: участников +200% за месяц, приглашающих +425%, сквозная конверсия 9,6% → 19,1%.</li>
             <li>Управляю экономикой программы лояльности: P&amp;L, CAC, решаю, какие механики оставить, убрать или усилить. Оптимизировал начисление кешбэка на 14%, исключив нецелевых мерчантов.</li>
@@ -497,7 +505,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       <div class="principle"><h3>Задача и срок вместо микроконтроля</h3><p>Команда сама снимает блокеры и приходит ко мне, когда нужно решение.</p></div>
       <div class="principle"><h3>Делегирую всё, что можно</h3><p>Чтобы самому заниматься тем, что сильнее всего влияет на результат.</p></div>
       <div class="principle"><h3>Защищаю команду</h3><p>Добиваюсь для людей лучших условий, вплоть до разговора один на один с руководством.</p></div>
-      <div class="principle"><h3>Расту людей</h3><p>Развиваю каждого по его карьерному треку и учу Product Owner других команд.</p></div>
+      <div class="principle"><h3>Расту людей и продактов</h3><p>Развиваю каждого по его карьерному треку и веду наставничество двух Product Owner банка.</p></div>
       <div class="principle"><h3>Договорённость с артефактом на дату</h3><p>В межкомандной работе «в процессе» не считается статусом. Есть результат к сроку или нет.</p></div>
     </div>
     <div class="team-perk reveal">
