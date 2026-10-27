@@ -222,6 +222,11 @@ h2::before { content: ""; display: block; width: 44px; height: 4px; border-radiu
 .tags span { font-size: 14px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
 .skills dt { font-weight: 600; margin-top: 16px; }
 .skills dd { margin: 4px 0 0; color: var(--muted); }
+.edu { list-style: none; margin: 4px 0 0; padding: 0; }
+.edu li { padding: 8px 0; border-top: 1px solid var(--line); }
+.edu li:first-child { border-top: 0; padding-top: 2px; }
+.edu b { color: var(--ink); font-weight: 600; }
+.edu span { margin-left: 10px; font-size: 14px; color: var(--muted); }
 
 .contact { background: var(--pine); color: var(--paper); border-top: 0; }
 .contact h2 { color: var(--paper); }
@@ -516,7 +521,12 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
         <dt>Продукт и экономика</dt><dd>Discovery, проверка гипотез, приоритизация, метрики (MAU, retention, CAC, NTB, NTP, АКБ), P&amp;L продукта, основы A/B-тестов.</dd>
         <dt>Техника</dt><dd>Практика back-end задач на Golang, SQL, Flutter (базово), ADR и C4, ИИ-инструменты разработки, Jira, Notion, Figma, Miro.</dd>
         <dt>Языки</dt><dd>Таджикский родной, русский свободно, английский B2.</dd>
-        <dt>Образование</dt><dd>Второе высшее: программное обеспечение и разработка ПО, Технологический университет Таджикистана, с 2026 (учусь). Магистр социальной работы, ТНУ, 2020. Бакалавр менеджмента, РГГМУ, Санкт-Петербург, 2018. Курс AI Product Manager.</dd>
+        <dt>Образование</dt><dd><ul class="edu">
+          <li><b>Второе высшее</b><span>2026 — сейчас</span><br>Программное обеспечение и разработка ПО, Технологический университет Таджикистана</li>
+          <li><b>Магистратура</b><span>2018 — 2020</span><br>Социальная работа, Таджикский национальный университет</li>
+          <li><b>Бакалавриат</b><span>2011 — 2018</span><br>Менеджмент, РГГМУ, Санкт-Петербург</li>
+          <li><b>Курс</b><br>AI Product Manager</li>
+        </ul></dd>
         <dt>Лидерство вне работы</dt><dd>Президент Совета иностранных студентов РГГМУ, 2013–2017.</dd>
       </dl>
     </div>
