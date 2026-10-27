@@ -211,9 +211,11 @@ h2::before { content: ""; display: block; width: 44px; height: 4px; border-radiu
 }
 .soon img { border-radius: 7px; }
 .soon-tag { display: inline-block; font-size: 14px; font-weight: 600; color: var(--pine); background: var(--surface); padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
-.soon { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 15px; color: var(--ink); text-decoration: none; background: var(--gold-soft); border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent); padding: 6px 14px 6px 6px; border-radius: 999px; margin-bottom: 18px; }
+.soon { display: inline-flex; align-items: center; gap: 10px; flex-wrap: nowrap; max-width: 100%; font-size: 15px; color: var(--ink); text-decoration: none; background: var(--gold-soft); border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent); padding: 6px 14px 6px 6px; border-radius: 16px; margin-bottom: 18px; }
 .soon span { background: var(--gold); color: #fff; font-weight: 600; font-size: 13px; padding: 3px 10px; border-radius: 999px; }
 .soon:hover { border-color: var(--gold); }
+.soon em { font-style: normal; font-weight: 500; line-height: 1.3; }
+.soon img, .soon span { flex: none; }
 @media (max-width: 600px) { .two .app { grid-template-columns: 1fr; padding: 24px; } .phone { width: 190px; margin: 8px 0 0; justify-self: center; } }
 .app h3 { margin-bottom: 10px; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
@@ -300,7 +302,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="intro">
-      <a class="soon" href="#app"><img src="img/app-icon.webp" alt="" width="26" height="26"><span>Скоро</span>Выходит моё приложение «Мои Финансы». Посмотреть</a>
+      <a class="soon" href="#app"><img src="img/app-icon.webp" alt="" width="26" height="26"><span>Скоро</span><em>Моё приложение «Мои Финансы»</em></a>
       <div class="now"><i></i>Сейчас: Product Owner команды «Лояльность», Банк Эсхата, Душанбе</div>
       <h1><span>Манучехр</span><span>Мелибаев</span></h1>
       <p class="role">Руководитель IT-проектов и Product Owner в банковском финтехе</p>
