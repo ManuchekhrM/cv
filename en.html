@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuchekhr Melibaev — IT Project Lead</title>
+<meta name="description" content="IT Project Lead and Product Owner in banking fintech. Three Scrum teams of up to 21 people, core banking, a bank loyalty program.">
+<link rel="alternate" hreflang="ru" href="https://manuchekhrm.github.io/cv/">
+<link rel="alternate" hreflang="en" href="https://manuchekhrm.github.io/cv/en.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F3F6F3;
+  --surface: #FFFFFF;
+  --ink: #1A2D29;
+  --muted: #5A6F6A;
+  --line: #D3DFD8;
+  --pine: #1F6B52;
+  --pine-soft: #E2EFE8;
+  --mint: #ECF5F0;
+  --gold: #D99A17;
+  --gold-soft: #FBF0D6;
+  --display: "Unbounded", system-ui, sans-serif;
+  --text: "Golos Text", system-ui, sans-serif;
+}
+/* Светлая тема всегда по умолчанию; тёмная — только кнопкой ◐ */
+:root[data-theme="dark"] {
+  --paper: #0F1B19; --surface: #162622; --ink: #E5EFEA; --muted: #98ADA6;
+  --line: #273B36; --pine: #6CC9A6; --pine-soft: #1A322C; --gold: #F0B941; --gold-soft: #3A2F14;
+  --mint: #13241F;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink); overflow-x: clip;
+  font: 400 17px/1.6 var(--text); -webkit-font-smoothing: antialiased;
+}
+a { color: var(--pine); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 12px; }
+h3 { font-size: 19px; font-weight: 500; }
+p { margin: 0 0 12px; }
+.lead { color: var(--muted); max-width: 62ch; }
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+
+/* Навигация */
+.nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 20px; height: 60px; }
+.nav .mono { font-family: var(--display); font-weight: 700; font-size: 15px; text-decoration: none; color: var(--ink); margin-right: auto; }
+.nav a.link { color: var(--muted); text-decoration: none; font-size: 15px; }
+.nav a.link:hover { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 500 16px var(--text); padding: 12px 20px; border-radius: 999px; border: 1.5px solid var(--pine); background: var(--pine); color: var(--paper); cursor: pointer; text-decoration: none; }
+.btn.ghost { background: transparent; color: var(--pine); }
+.btn.small { padding: 8px 14px; font-size: 14px; }
+.btn:hover { filter: brightness(1.08); }
+.theme { background: none; border: 1px solid var(--line); color: var(--ink); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 16px; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.lang a { font: 600 13px var(--text); padding: 5px 10px; border-radius: 999px; color: var(--muted); text-decoration: none; }
+.lang a[aria-current] { background: var(--pine); color: var(--paper); }
+.lang a:hover:not([aria-current]) { color: var(--ink); }
+
+/* Первый экран */
+.hero { padding: 64px 0 56px; border-top: 0; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 48px; align-items: start; }
+.portrait { margin: 0; position: relative; align-self: center; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 28px; box-shadow: 0 24px 50px rgba(26,45,41,.18); }
+.portrait figcaption { position: absolute; left: 14px; bottom: 14px; font-size: 13px; background: color-mix(in srgb, var(--surface) 88%, transparent); color: var(--ink); padding: 5px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
+/* «Что я приношу» — во всю ширину под фото и текстом: вкладки слева, содержимое справа */
+.hero-grid .pillars { grid-column: 1 / -1; display: grid; grid-template-columns: 240px 1fr; gap: 8px 32px; align-items: start; }
+.hero-grid .pillars-q { grid-column: 1 / -1; margin: 0; }
+.hero-grid .tabs { flex-direction: column; }
+.hero-grid .tab { text-align: left; padding: 12px 14px; }
+.hero-grid .panel { padding: 4px 0; display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+.hero-grid .panel ul { margin: 0; }
+.now { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; color: var(--muted); margin-bottom: 22px; }
+.now i { width: 9px; height: 9px; border-radius: 50%; background: var(--pine); box-shadow: 0 0 0 4px var(--pine-soft); }
+.hero h1 { font-size: clamp(38px, 6vw, 68px); }
+.hero h1 span { display: block; }
+.role { font-size: clamp(19px, 2.2vw, 23px); margin: 22px 0 14px; max-width: 34ch; font-weight: 500; }
+.hero .lead { margin-bottom: 28px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Три опоры */
+.pillars { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px; }
+.pillars-q { font-size: 15px; color: var(--muted); margin-bottom: 14px; }
+.tabs { display: flex; gap: 6px; background: var(--paper); padding: 5px; border-radius: 14px; }
+.tab { flex: 1; font: 500 15px var(--text); white-space: nowrap; padding: 10px 8px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); cursor: pointer; position: relative; overflow: hidden; }
+.tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(27,42,47,.12); }
+.tab .bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--gold); }
+/* Панели лежат в одной ячейке: высота не скачет, смена — плавная */
+.panels { display: grid; }
+.panel { grid-area: 1 / 1; padding: 22px 6px 4px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity .45s ease, transform .45s cubic-bezier(.2,.8,.2,1), visibility 0s .45s; }
+.panel.on { opacity: 1; visibility: visible; transform: none; transition: opacity .45s ease .1s, transform .55s cubic-bezier(.2,.8,.2,1) .1s, visibility 0s; }
+.big { font-family: var(--display); font-weight: 700; font-size: 56px; line-height: 1; color: var(--pine); font-variant-numeric: tabular-nums; }
+.big small { display: block; font-size: 16px; font-weight: 500; color: var(--muted); margin-top: 8px; font-family: var(--text); }
+.panel ul { list-style: none; margin: 18px 0 0; padding: 0; }
+.panel li { padding: 9px 0 9px 22px; border-top: 1px solid var(--line); position: relative; }
+.panel li::before { content: ""; position: absolute; left: 0; top: 18px; width: 8px; height: 8px; border-radius: 2px; background: var(--gold); }
+
+/* Результаты */
+.results { margin-top: 32px; display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 48px; }
+.result { display: grid; grid-template-columns: 172px 1fr; gap: 18px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--line); }
+.result b { font-family: var(--display); font-weight: 700; font-size: 28px; color: var(--pine); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.result span { display: block; color: var(--muted); font-size: 15px; }
+
+/* Зелёные оттенки и элементы — точечно */
+#results, #lead { background: var(--mint, var(--paper)); }
+h2::before { content: ""; display: block; width: 44px; height: 4px; border-radius: 2px; background: var(--pine); margin-bottom: 18px; }
+.contact h2::before { background: var(--gold); }
+.hero { background: radial-gradient(560px 380px at 82% 30%, var(--pine-soft), transparent 70%); }
+.pillars { border-top: 4px solid var(--pine); }
+.principle { border-top-color: var(--pine); }
+.result b::after { content: ""; display: block; width: 28px; height: 3px; border-radius: 2px; background: var(--gold); margin-top: 8px; }
+
+/* Награда */
+.award { margin-top: 32px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 14px 32px 14px 14px; }
+.award img { display: block; width: 100%; height: auto; border-radius: 16px; }
+.award h3 { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+.award p { color: var(--muted); margin: 0; }
+.award .award-tag { display: inline-block; font-size: 14px; font-weight: 600; color: var(--pine); background: var(--pine-soft); padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
+
+.mentor { margin-top: 16px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; background: var(--pine); color: var(--paper); border-radius: 22px; padding: 22px 30px; }
+.mentor > b { font-family: var(--display); font-size: 40px; line-height: 1; color: var(--gold); white-space: nowrap; }
+.mentor h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; color: var(--paper); }
+.mentor p { margin: 0; color: color-mix(in srgb, var(--paper) 80%, var(--pine)); }
+/* Фото с подписью внутри разделов */
+.shot { margin: 28px 0 0; max-width: 860px; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 22px; }
+.shot figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; }
+.team-perk { margin-top: 32px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: center; }
+.team-perk img { display: block; width: 100%; height: auto; border-radius: 20px; }
+.team-perk h3 { margin-bottom: 8px; }
+.team-perk p { color: var(--muted); margin: 0; }
+
+/* Логотипы в опыте */
+.job .logo { display: block; height: 22px; width: auto; margin-bottom: 8px; opacity: .9; }
+.job .org { display: inline-block; font-size: 13px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; margin-bottom: 8px; }
+.job .logo-ocf { height: 30px; mix-blend-mode: multiply; }
+:root[data-theme="dark"] .job .logo-ocf { mix-blend-mode: normal; border-radius: 6px; }
+
+/* Кейс */
+.case { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; margin-top: 32px; align-items: start; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 14px 0; transition: opacity .4s ease; }
+.steps li::before { content: counter(s); font-family: var(--display); font-weight: 700; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--pine-soft); color: var(--pine); }
+.steps h3 { margin-bottom: 4px; }
+.steps p { color: var(--muted); margin: 0; }
+.funnel { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 24px; }
+.switch { display: inline-flex; background: var(--paper); border-radius: 999px; padding: 4px; margin-bottom: 22px; }
+.switch button { font: 500 15px var(--text); border: 0; padding: 8px 18px; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; }
+.switch button[aria-pressed="true"] { background: var(--pine); color: var(--paper); }
+.stage { margin-bottom: 18px; }
+.stage-top { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; margin-bottom: 6px; }
+.stage-top b { font-family: var(--display); font-weight: 700; }
+.track { height: 30px; background: var(--paper); border-radius: 8px; overflow: hidden; }
+.fill { height: 100%; background: var(--pine); border-radius: 8px; transition: width .7s cubic-bezier(.2,.8,.2,1); }
+.stage:last-of-type .fill { background: var(--gold); }
+.stage b { font-variant-numeric: tabular-nums; }
+.funnel-note { color: var(--muted); font-size: 15px; margin: 18px 0 0; }
+.funnel-step { font-family: var(--display); font-weight: 500; font-size: 17px; margin: 0 0 18px; min-height: 2.6em; }
+
+/* Кейс на компьютере: шаги прокручиваются, воронка стоит на месте и меняется */
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  .case.scrolly .steps li { min-height: 46vh; align-content: center; opacity: .35; }
+  .case.scrolly .steps li.active { opacity: 1; }
+  .case.scrolly .funnel { position: sticky; top: 120px; }
+}
+
+/* Появление при прокрутке */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+  .reveal.from-left { transform: translateX(-48px); }
+  .reveal.from-right { transform: translateX(48px); }
+  .reveal.in { opacity: 1; transform: none; }
+}
+
+/* Линия опыта прорисовывается по мере прокрутки */
+.timeline { position: relative; }
+.timeline::after { content: ""; position: absolute; left: -2px; top: 0; width: 2px; height: 100%; background: var(--pine); transform-origin: top; transform: scaleY(var(--p, 1)); }
+.funnel-note strong { color: var(--ink); }
+
+/* Карьера */
+.timeline { margin-top: 28px; border-left: 2px solid var(--line); margin-left: 8px; }
+.job { position: relative; padding: 0 0 8px 28px; }
+.job::before { content: ""; position: absolute; z-index: 1; left: -8px; top: 26px; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); border: 2px solid var(--pine); }
+.job.current::before { background: var(--pine); }
+.job > button { width: 100%; text-align: left; background: none; border: 0; padding: 18px 0; cursor: pointer; color: var(--ink); display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; font: inherit; }
+.job h3 { grid-column: 1; }
+.job .where { grid-column: 1; color: var(--muted); font-size: 15px; }
+.job .when { grid-column: 2; grid-row: 1; color: var(--muted); font-size: 15px; white-space: nowrap; }
+.job .toggle { grid-column: 2; grid-row: 2; justify-self: end; color: var(--pine); font-size: 14px; }
+.job ul { margin: 0 0 18px; padding-left: 18px; max-width: 72ch; }
+.job li { margin-bottom: 8px; }
+.job .body[hidden] { display: none; }
+
+/* Как руковожу */
+.principles { margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 40px; }
+.principle { padding: 18px 0; border-top: 2px solid var(--ink); }
+.principle h3 { margin-bottom: 8px; }
+.principle p { color: var(--muted); margin: 0; }
+
+/* Остальное */
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 28px; }
+.app { background: var(--gold-soft); border-radius: 22px; padding: 26px; align-self: start; scroll-margin-top: 90px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+.two .app { grid-column: 1 / -1; padding: 32px 40px; }
+.app p { max-width: 56ch; }
+.app-title { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.app-title img { border-radius: 12px; flex: none; }
+.app-title h3 { margin: 0; }
+/* Рамка телефона вокруг скриншота */
+.phone { width: 210px; margin-right: 24px; padding: 7px; background: #1A1F24; border-radius: 30px; box-shadow: 0 18px 40px rgba(26,45,41,.25); transform: rotate(3deg); }
+.phone img { display: block; width: 100%; height: auto; border-radius: 23px; }
+@media (prefers-reduced-motion: no-preference) {
+  .app.reveal .phone { transform: rotate(3deg) translateY(30px); transition: transform 1s cubic-bezier(.2,.8,.2,1) .15s; }
+  .app.reveal.in .phone { transform: rotate(3deg); }
+}
+.soon img { border-radius: 7px; }
+.soon-tag { display: inline-block; font-size: 14px; font-weight: 600; color: var(--pine); background: var(--surface); padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
+.soon { display: inline-flex; align-items: center; gap: 10px; flex-wrap: nowrap; max-width: 100%; font-size: 15px; color: var(--ink); text-decoration: none; background: var(--gold-soft); border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent); padding: 6px 14px 6px 6px; border-radius: 16px; margin-bottom: 18px; }
+.soon span { background: var(--gold); color: #fff; font-weight: 600; font-size: 13px; padding: 3px 10px; border-radius: 999px; }
+.soon:hover { border-color: var(--gold); }
+.soon em { font-style: normal; font-weight: 500; line-height: 1.3; }
+.soon img, .soon span { flex: none; }
+@media (max-width: 600px) { .two .app { grid-template-columns: 1fr; padding: 24px; } .phone { width: 190px; margin: 8px 0 0; justify-self: center; } }
+.app h3 { margin-bottom: 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tags span { font-size: 14px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+.skills dt { font-weight: 600; margin-top: 16px; }
+.skills dd { margin: 4px 0 0; color: var(--muted); }
+.edu-card { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--pine); border-radius: 22px; padding: 24px 26px; align-self: start; }
+.edu-card h3 { margin-bottom: 14px; }
+.edu { list-style: none; margin: 0; padding: 0; }
+.edu li { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.edu li:first-child { border-top: 0; padding-top: 0; }
+.edu-deg { justify-self: start; font-size: 13px; font-weight: 600; color: var(--pine); background: var(--pine-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 6px; }
+.edu-years { font-size: 14px; color: var(--muted); white-space: nowrap; }
+.edu strong { grid-column: 1 / -1; font-weight: 600; }
+.edu em { grid-column: 1 / -1; font-style: normal; color: var(--muted); font-size: 15px; }
+
+.contact { background: var(--pine); color: var(--paper); border-top: 0; }
+.contact h2 { color: var(--paper); }
+.contact .lead { color: color-mix(in srgb, var(--paper) 78%, var(--pine)); }
+.contact .btn { background: var(--paper); color: var(--pine); border-color: var(--paper); }
+.contact .btn.ghost { background: transparent; color: var(--paper); }
+.icon-btn { width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; background: var(--paper); transition: transform .2s ease; }
+.icon-btn svg { width: 30px; height: 30px; }
+.icon-btn:hover { transform: translateY(-2px); }
+.socials { align-items: center; }
+.print-only { display: none; }
+footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+
+/* Первое появление: одна сцена на загрузке */
+@media (prefers-reduced-motion: no-preference) {
+  .intro > * { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards; }
+  .intro > *:nth-child(2) { animation-delay: .08s; }
+  .intro > *:nth-child(3) { animation-delay: .16s; }
+  .intro > *:nth-child(4) { animation-delay: .24s; }
+  .intro > *:nth-child(5) { animation-delay: .32s; }
+  .pillars { opacity: 0; animation: rise .8s .5s cubic-bezier(.2,.8,.2,1) forwards; }
+  .portrait { opacity: 0; transform: scale(.96); animation: rise 1s .15s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}
+
+@media (max-width: 860px) {
+  .hero-grid, .case, .two { grid-template-columns: 1fr; gap: 36px; }
+  .award, .team-perk { grid-template-columns: 1fr; padding: 14px; gap: 18px; }
+  .award > div { padding: 0 10px 12px; }
+  .hero-grid .pillars { grid-template-columns: 1fr; }
+  .hero-grid .tabs { flex-direction: row; }
+  .hero-grid .tab { text-align: center; padding: 10px 8px; }
+  .hero-grid .panel { grid-template-columns: 1fr; gap: 16px; }
+  .results { grid-template-columns: 1fr; }
+  .nav a.link { display: none; }
+  section { padding: 56px 0; }
+}
+@media (max-width: 480px) {
+  .nav .wrap { gap: 8px; }
+  .nav .btn.small { padding: 8px 12px; }
+  .lang a { padding: 5px 8px; }
+  .wrap { padding: 0 16px; }
+  .result { grid-template-columns: 1fr; gap: 2px; }
+  .tab { font-size: 14px; padding: 9px 4px; white-space: normal; line-height: 1.25; }
+  .big { font-size: 46px; }
+  .job > button { grid-template-columns: 1fr; }
+  .job .when, .job .toggle { grid-column: 1; grid-row: auto; justify-self: start; }
+}
+
+/* Печать = PDF-версия */
+@media print {
+  .nav, .actions, .switch, .contact .actions, .theme, .job .toggle, .tabs { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  section { padding: 18px 0; break-inside: avoid-page; }
+  .job .body[hidden] { display: block !important; }
+  .panels { display: block; }
+  .panel { opacity: 1 !important; visibility: visible !important; transform: none !important; }
+  .portrait { max-width: 60%; }
+  .pillars, .portrait, .intro > *, .reveal { opacity: 1 !important; animation: none !important; transform: none !important; }
+  .timeline::after { display: none; }
+  .print-only { display: block !important; }
+  .contact { background: #fff; color: #000; }
+  .contact h2, .contact .lead { color: #000; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="mono" href="#top">M. Melibaev</a>
+    <a class="link" href="#results">Results</a>
+    <a class="link" href="#case">Case</a>
+    <a class="link" href="#career">Experience</a>
+    <a class="link" href="#lead">How I lead</a>
+    <div class="lang" aria-label="Language"><a href="./" hreflang="ru" lang="ru">RU</a><a aria-current="page">EN</a></div>
+    <button class="theme" id="theme" aria-label="Toggle theme">◐</button>
+    <a class="btn small" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="intro">
+      <a class="soon" href="#app"><img src="img/app-icon.webp" alt="" width="26" height="26"><span>Soon</span><em>My app “Moi Finansy”</em></a>
+      <div class="now"><i></i>Now: Product Owner of the Loyalty team, Eskhata Bank, Dushanbe</div>
+      <h1><span>Manuchekhr</span><span>Melibaev</span></h1>
+      <p class="role">IT Project Lead and Product Owner in banking fintech</p>
+      <p class="lead">For 5 years I have led teams that ship products and hit deadlines — from digital business banking at Alif Business to Eskhata Bank’s loyalty program. I manage people, run product economics and understand the technical side.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn ghost" href="cv-melibaev-en.pdf" download="CV_Manuchekhr_Melibaev.pdf">Download PDF</a>
+      </div>
+    </div>
+
+    <figure class="portrait">
+      <img src="img/photo-qbr.jpg" alt="Manuchekhr Melibaev on stage at Eskhata Bank’s QBR Q1 2026" width="1280" height="853">
+      <figcaption>QBR Q1 2026, Eskhata Bank</figcaption>
+    </figure>
+
+    <div class="pillars" id="pillars">
+      <p class="pillars-q">How I help a team</p>
+      <div class="tabs" role="tablist" aria-label="Strengths">
+        <button class="tab" role="tab" id="t-people" aria-controls="p-people" aria-selected="true">Lead people<span class="bar"></span></button>
+        <button class="tab" role="tab" id="t-money" aria-controls="p-money" aria-selected="false" tabindex="-1">Run the numbers<span class="bar"></span></button>
+        <button class="tab" role="tab" id="t-code" aria-controls="p-code" aria-selected="false" tabindex="-1">Get the code<span class="bar"></span></button>
+      </div>
+      <div class="panels">
+      <div class="panel on" role="tabpanel" id="p-people" aria-labelledby="t-people">
+        <div class="big"><span data-count="21">21</span><small>people in three development teams of the core banking system</small></div>
+        <ul>
+          <li>Currently leading a team of 11.</li>
+          <li>Mentoring two Product Owners, helping them grow on the business and technical side.</li>
+          <li>Aligning priorities across development teams bank-wide so shared tasks get solved fast.</li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel" id="p-money" aria-labelledby="t-money">
+        <div class="big"><span data-count="14" data-suffix="%">14%</span><small>of the cashback budget saved</small></div>
+        <ul>
+          <li>I own the P&amp;L and customer acquisition cost of the loyalty program.</li>
+          <li>Based on data and research, I decide which mechanics to keep, cut or scale.</li>
+          <li>I defend new product mechanics, their economics and new internal regulations before the Management Board.</li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel" id="p-code" aria-labelledby="t-code">
+        <div class="big"><span data-count="145">145</span><small>automated tests in my own app</small></div>
+        <ul>
+          <li>Took on selected back-end tasks for the partner platform at Alif Bank.</li>
+          <li>Building my own mobile app in Flutter with AI tools.</li>
+          <li>I speak the architects’ language: ADR, C4, service design.</li>
+          <li>Setting up my own server for my apps and websites, plus a personal cloud storage.</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="results">
+  <div class="wrap">
+    <h2>Results in numbers</h2>
+    <div class="award reveal">
+      <img src="img/award.jpg" alt="“Best Feature 2025” award and Eskhata Bank diploma for Wake up bonus" width="1024" height="768" loading="lazy">
+      <div>
+        <p class="award-tag">Bank award</p>
+        <h3>“Best Feature 2025” — Wake up bonus</h3>
+        <p><b>Wake up bonus</b> brings back “dormant” customers: anyone who stopped using the bank’s app gets a bonus once they start making transactions again. It was named Eskhata Bank’s best feature of the year, confirmed by a diploma signed by the Chairman of the Management Board.</p>
+      </div>
+    </div>
+    <div class="mentor reveal">
+      <b>2 PO</b>
+      <div><h3>Mentoring two Product Owners</h3><p>I help Product Owners from other teams grow on the business and technical side so they can run their products confidently on their own.</p></div>
+    </div>
+    <div class="results">
+      <div class="result reveal from-left"><b data-count="90" data-prefix="−70–" data-suffix="%">−70–90%</b><div>manual reporting and reconciliation at Alif Business, a digital bank for entrepreneurs<span>Alif Bank</span></div></div>
+      <div class="result reveal from-right"><b data-count="200" data-prefix="+" data-suffix="%">+200%</b><div>participants in the “Recommend and Earn” referral program in one month: friends can now be invited right from a money transfer<span>Eskhata Bank</span></div></div>
+      <div class="result reveal from-left"><b data-count="25" data-prefix="−" data-suffix="%">−25%</b><div>manual operational processes through automation<span>Alif Bank</span></div></div>
+      <div class="result reveal from-right"><b data-count="2" data-prefix="×">×2</b><div>share of customers who opened “Recommend and Earn” and invited a friend<span>Eskhata Bank</span></div></div>
+      <div class="result reveal from-left"><b data-count="95" data-prefix="&gt;" data-suffix="%">&gt;95%</b><div>releases shipped on time with no major customer-facing incidents<span>Alif Bank</span></div></div>
+      <div class="result reveal from-right"><b data-count="14" data-suffix="%">14%</b><div>of the cashback budget saved: found purchases where the bank paid cashback with no return and changed the accrual rules<span>Eskhata Bank</span></div></div>
+      <div class="result reveal from-left"><b data-count="2" data-prefix="×">×2</b><div>faster onboarding of partner merchants to Alif Business<span>Alif Bank</span></div></div>
+      <div class="result reveal from-right"><b data-count="100" data-suffix="%">100%</b><div>of the quarter’s strategic initiatives delivered on time<span>Eskhata Bank</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="case">
+  <div class="wrap">
+    <h2>How I work: the “Recommend and Earn” case</h2>
+    <p class="lead">First understand why customers drop off halfway — and only then build.</p>
+    <figure class="shot reveal">
+      <img src="img/stage-v2.jpg" alt="Manuchekhr on stage presenting the referral program funnel" width="1448" height="1086" loading="lazy">
+      <figcaption>Presenting the “Recommend and Earn” funnel to bank leadership. The slide content has been replaced: real bank data is not published.</figcaption>
+    </figure>
+    <div class="case scrolly">
+      <ol class="steps">
+        <li data-state="before" data-caption="Before: fewer than 10% of visitors invited a friend."><div><h3>Spotted the gap</h3><p>Many customers accepted the program terms, but fewer than half invited even one friend.</p></div></li>
+        <li data-state="before" data-caption="The barrier is the last step: more than half drop off between agreeing and inviting."><div><h3>Formed a hypothesis</h3><p>The barrier was typing a phone number by hand: not everyone remembers friends’ numbers or wants to enter them in the app.</p></div></li>
+        <li data-state="after" data-caption="After: with invites in transfers, almost 20% of visitors invite a friend."><div><h3>Tested it</h3><p>We built invitations into money transfers: when sending money to a friend, a customer invites them to the bank right away. Participants grew by 200% in a month — hypothesis confirmed.</p></div></li>
+        <li data-state="after" data-caption="Next step: a promo code removes typing the number altogether."><div><h3>Shipped the solution</h3><p>Added personal promo codes to share in messengers and social media, plus individual promo codes for partner companies, so we and our partners bring each other customers.</p></div></li>
+      </ol>
+
+      <div class="funnel" aria-live="polite">
+        <div class="switch" role="group" aria-label="Funnel period">
+          <button type="button" data-f="before" aria-pressed="false">Before</button>
+          <button type="button" data-f="after" aria-pressed="true">After</button>
+        </div>
+        <p class="funnel-step" id="fstep">After: with invites in transfers, almost 20% of visitors invite a friend.</p>
+        <div class="stage">
+          <div class="stage-top"><span>Opened the program section</span><b>100%</b></div>
+          <div class="track"><div class="fill" style="width:100%"></div></div>
+        </div>
+        <div class="stage">
+          <div class="stage-top"><span>Agreed to take part</span><b data-v>27%</b></div>
+          <div class="track"><div class="fill" data-w style="width:27%"></div></div>
+        </div>
+        <div class="stage">
+          <div class="stage-top"><span>Invited at least one friend</span><b data-v>19.1%</b></div>
+          <div class="track"><div class="fill" data-w style="width:19.1%"></div></div>
+        </div>
+        <p class="funnel-note">Visits to the program section grew <strong>2.8×</strong>, the number of inviters <strong>5.6×</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="lead">Click a role to see the details.</p>
+    <div class="timeline">
+      <div class="job current">
+        <button type="button" aria-expanded="true"><h3><img class="logo" src="img/logo-eskhata.svg" alt="Eskhata Bank" width="73" height="22">Product Owner, Loyalty team</h3><span class="when">Apr 2025 — present</span><span class="where">Eskhata Bank OJSC, Dushanbe</span><span class="toggle">Collapse</span></button>
+        <div class="body">
+          <ul>
+            <li>Lead a team of 11: developers (back end, CFT core banking, iOS and Android), QA engineer, designer, business and data analysts, product development manager; a manager and the analysts report to me. We own everything that keeps customers with the bank: cashback, bonuses, “Recommend and Earn”, in-app gamification and tailored terms for customer segments.</li>
+            <li>Mentor two Product Owners from other teams, helping them grow on the business and technical side.</li>
+            <li>On my own initiative introduced quarter-ahead planning — all of the quarter’s strategic initiatives were delivered on time.</li>
+            <li>Relaunched “Recommend and Earn” based on customer research: participants +200% in a month, inviters +425%, share of visitors who invited a friend up from 9.6% to 19.1%. Launched individual promo codes for partner companies to bring each other customers.</li>
+            <li>Run the loyalty program’s economics: P&amp;L and customer acquisition cost (CAC); decide which mechanics to keep, cut or scale. Cut the cashback budget by 14% by finding purchases where the bank paid cashback with no return and changing the accrual rules by purchase category.</li>
+            <li>On my own initiative wrote the bank-wide internal regulation on cashback; aligned “Recommend and Earn” with the operational risk team.</li>
+            <li>Built pre-development customer research (Discovery): in-branch surveys, observing branch operations, Jobs-to-be-Done, hypothesis testing.</li>
+            <li>Align priorities across development teams bank-wide so shared tasks get solved fast.</li>
+            <li>Run joint projects with neighbouring products in our area (deposits, cards, partner programs) and bank functions: core banking system, mobile app, risk, legal, branches.</li>
+            <li>Own the product side of the bank’s in-house loyalty platform, built to replace external solutions: cashback module, admin panel, database.</li>
+            <li>Defend new product mechanics, their economics and new internal regulations before senior management and the Management Board; report results at quarterly business reviews (QBR) and post-implementation reviews (PIR).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <button type="button" aria-expanded="false"><h3><img class="logo" src="img/logo-alif.svg" alt="Alif Bank" width="60" height="22">IT Project Manager, Core Banking System</h3><span class="when">Jan 2024 — Apr 2025</span><span class="where">Alif Bank OJSC, Dushanbe</span><span class="toggle">Details</span></button>
+        <div class="body" hidden>
+          <ul>
+            <li>Led three Scrum teams of up to 21 people (developers, analysts, QA); a team lead and a manager reported to me.</li>
+            <li>Delivered the integration of the core banking system with the Tax Committee, removing part of the manual work.</li>
+            <li>Cut manual operational processes by about 25%.</li>
+            <li>Over 95% of releases on time with no major customer-facing incidents.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <button type="button" aria-expanded="false"><h3><img class="logo" src="img/logo-alif.svg" alt="Alif Bank" width="60" height="22">IT Project Manager, Alif Business and PRM</h3><span class="when">Jan 2022 — Jan 2024</span><span class="where">Alif Bank OJSC, Dushanbe</span><span class="toggle">Details</span></button>
+        <div class="body" hidden>
+          <ul>
+            <li>Ran several digital products in parallel: Alif Business (a bank for entrepreneurs) and a partner relationship management system (PRM); partner merchant onboarding became 2× faster.</li>
+            <li>Led a team of 10 (developers and QA), delivering a working increment every sprint.</li>
+            <li>Cut manual reporting and reconciliation by 70–90%.</li>
+            <li>Besides management, took on selected back-end and front-end tasks — so I estimate timelines and risks more accurately.</li>
+            <li>Reduced rework and post-release defects by working out requirements before development.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job">
+        <button type="button" aria-expanded="false"><h3><img class="logo logo-ocf" src="img/logo-ocf.jpg" alt="Office of Civil Freedoms" width="50" height="30">Social projects</h3><span class="when">2019 — 2022</span><span class="where">Office of Civil Freedoms, Dasti Sabokh Foundation</span><span class="toggle">Details</span></button>
+        <div class="body" hidden>
+          <ul>
+            <li>Coordinated the development of an educational game and a mobile app against bullying; ran user research in 5 schools: 190 students, 10 teachers, 30 parents.</li>
+            <li>Launched an environmental project from scratch to 200+ active participants across several regions.</li>
+            <li>Social work: needs assessment, coordination of medical, legal and social services.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lead">
+  <div class="wrap">
+    <h2>How I lead</h2>
+    <p class="lead">The rules my team works by today.</p>
+    <div class="principles">
+      <div class="principle"><h3>Tasks and deadlines, not micromanagement</h3><p>The team removes its own obstacles and comes to me when a decision is needed.</p></div>
+      <div class="principle"><h3>Delegate everything I can</h3><p>So I can focus on what moves the results most.</p></div>
+      <div class="principle"><h3>Stand up for the team</h3><p>I push for better conditions for my people — up to one-on-ones with senior management.</p></div>
+      <div class="principle"><h3>Grow people</h3><p>I help everyone grow along their career path and mentor two of the bank’s Product Owners.</p></div>
+      <div class="principle"><h3>Agreements come with a result and a date</h3><p>When working with other teams, “in progress” is not a status. By the deadline there has to be a concrete result.</p></div>
+    </div>
+    <div class="team-perk reveal">
+      <img src="img/tshirt.jpg" alt="Team T-shirt: Eskhata Loyalty on the front, Loyalty builds value on the back" width="1280" height="777" loading="lazy">
+      <div><h3>Our own team T-shirt — the only one in the bank</h3><p>I secured a branded T-shirt for the Loyalty team: “Loyalty builds value. Trust. Benefit. Relationships.” A small thing, but for the team it is a sign: they are valued, and the whole bank can see it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two">
+    <div class="app" id="app">
+      <div>
+        <p class="soon-tag">Coming soon to the App Store and Google Play</p>
+        <div class="app-title"><img src="img/app-icon.webp" alt="“Moi Finansy” app icon" width="52" height="52"><h3>My own product: “Moi Finansy” (My Finances)</h3></div>
+        <p>A mobile app for tracking personal finances. I went the whole way myself: first-version plan (MVP), design, development with AI tools, 145 automated tests.</p>
+        <div class="tags"><span>Flutter</span><span>iOS and Android</span><span>Claude Code</span><span>Automated tests</span></div>
+      </div>
+      <div class="phone"><img src="img/app-home.webp" alt="Home screen of the “Moi Finansy” app: balance, income and expenses by category" width="920" height="2000" loading="lazy"></div>
+    </div>
+    <div>
+      <h3>Skills</h3>
+      <dl class="skills">
+        <dt>Management</dt><dd>Multiple parallel projects and teams, Agile, Scrum and SAFe, release planning, risk management, delegation, people development, working with senior management.</dd>
+        <dt>Product and economics</dt><dd>Discovery, hypothesis testing, prioritization, metrics: monthly active users (MAU), retention, customer acquisition cost (CAC), new-to-bank (NTB) and new-to-product (NTP) customers, active customer base, product P&amp;L, A/B testing basics.</dd>
+        <dt>Tech</dt><dd>Hands-on back-end tasks in Golang, SQL, Flutter (basic), architecture documents (ADR, C4), AI development tools, Jira, Notion, Figma, Miro.</dd>
+        <dt>Languages</dt><dd>Tajik — native, Russian — fluent, English — B2.</dd>
+        <dt>Leadership outside work</dt><dd>President of the International Students’ Council, RSHU, 2013–2017. Head of the Culture and Media sectors, Association of International Students, St. Petersburg, 2014–2017.</dd>
+      </dl>
+    </div>
+    <div class="edu-card">
+      <h3>Education</h3>
+      <ol class="edu">
+        <li><span class="edu-deg">Second degree</span><span class="edu-years">2026 — present</span><strong>Software Engineering</strong><em>Tajik Technical University named after Academician M. S. Osimi</em></li>
+        <li><span class="edu-deg">Master’s</span><span class="edu-years">2018 — 2020</span><strong>Social Work</strong><em>Tajik National University</em></li>
+        <li><span class="edu-deg">Bachelor’s</span><span class="edu-years">2011 — 2018</span><strong>Management</strong><em>Russian State Hydrometeorological University, St. Petersburg</em></li>
+        <li><span class="edu-deg">Course</span><strong>AI Product Manager</strong><em>Managing AI products and implementing ML solutions</em></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lead">I’d be glad to hear from you — I reply by email, on LinkedIn or Telegram.</p>
+    <div class="actions socials">
+      <a class="icon-btn" href="mailto:immelibaev@gmail.com" aria-label="Email immelibaev@gmail.com" title="immelibaev@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#D99A17"/><path d="M5.5 7.5h13v9h-13z M5.5 8l6.5 5 6.5-5" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/manuchekhr-melibaev-bb4a3221b/" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#0A66C2"/><path fill="#fff" d="M6.9 9.6h2.5V18H6.9zM8.15 5.6a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9zM11.1 9.6h2.4v1.15h.03c.34-.64 1.16-1.3 2.38-1.3 2.55 0 3.02 1.68 3.02 3.86V18h-2.5v-4.1c0-.98-.02-2.24-1.36-2.24-1.37 0-1.58 1.07-1.58 2.17V18h-2.5z"/></svg></a>
+      <a class="icon-btn" href="https://t.me/im_melibaev" target="_blank" rel="noopener" aria-label="Message on Telegram @im_melibaev" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#26A5E4"/><path fill="#fff" d="M5.4 11.8l11.6-4.5c.54-.2 1.01.13.84.95l-1.98 9.3c-.15.66-.54.82-1.1.51l-3.03-2.23-1.46 1.41c-.16.16-.3.3-.62.3l.22-3.08 5.6-5.06c.24-.22-.05-.34-.38-.13l-6.92 4.36-2.98-.93c-.65-.2-.66-.65.14-.96z"/></svg></a>
+      <a class="btn ghost" href="cv-melibaev-en.pdf" download="CV_Manuchekhr_Melibaev.pdf">Download PDF</a>
+    </div>
+    <p class="print-only">immelibaev@gmail.com · linkedin.com/in/manuchekhr-melibaev-bb4a3221b · t.me/im_melibaev</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Manuchekhr Melibaev, Dushanbe, 2026</div></footer>
+
+<script>
+(function () {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Тема
+  const root = document.documentElement;
+  document.getElementById("theme").addEventListener("click", () => {
+    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+  });
+
+  // Вкладки «Что я приношу»: сами листаются, пока человек не нажмёт
+  const tabs = [...document.querySelectorAll(".tab")];
+  let current = 0, timer = null, stopped = reduce;
+  const SHOW_MS = 4500;
+  // Счётчик: плавно набирает число, ширина зафиксирована заранее — ничего не прыгает
+  function countUp(el) {
+    if (reduce || !el.dataset.count) return;
+    const to = +el.dataset.count, pre = el.dataset.prefix || "", suf = el.dataset.suffix || "";
+    const final = pre + to + suf;
+    el.textContent = final;
+    el.style.display = "inline-block";
+    el.style.minWidth = el.getBoundingClientRect().width + "px";
+    const t0 = performance.now(), dur = 1300;
+    cancelAnimationFrame(el._raf);
+    (function tick(now) {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+      el.textContent = pre + Math.round(to * e) + suf;
+      if (k < 1) el._raf = requestAnimationFrame(tick); else el.textContent = final;
+    })(t0);
+  }
+
+  function select(i, focus) {
+    tabs.forEach((t, k) => {
+      const on = k === i;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute("aria-controls"));
+      const was = panel.classList.contains("on");
+      panel.classList.toggle("on", on);
+      panel.inert = !on;
+      panel.setAttribute("aria-hidden", !on);
+      if (on && !was) countUp(panel.querySelector("[data-count]"));
+      const bar = t.querySelector(".bar");
+      bar.style.transition = "none"; bar.style.width = "0";
+      if (on && !stopped) { bar.offsetWidth; bar.style.transition = `width ${SHOW_MS}ms linear`; bar.style.width = "100%"; }
+    });
+    current = i;
+    if (focus) tabs[i].focus();
+  }
+  function stop() { stopped = true; clearInterval(timer); tabs.forEach(t => { const b = t.querySelector(".bar"); b.style.transition = "none"; b.style.width = "0"; }); }
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => { stop(); select(i); });
+    t.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        stop(); select((current + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length, true);
+      }
+    });
+  });
+  document.getElementById("pillars").addEventListener("pointerenter", () => { if (!stopped) { clearInterval(timer); } });
+  document.getElementById("pillars").addEventListener("pointerleave", () => { if (!stopped) { timer = setInterval(() => select((current + 1) % tabs.length), SHOW_MS); select(current); } });
+  select(0);
+  setTimeout(() => countUp(document.querySelector("#p-people [data-count]")), 500);
+  if (!stopped) timer = setInterval(() => select((current + 1) % tabs.length), SHOW_MS);
+
+  // Воронка До / После: столбики и проценты меняются плавно
+  const data = { before: [20.8, 9.6], after: [27, 19.1] };
+  const fills = document.querySelectorAll("[data-w]"), vals = document.querySelectorAll("[data-v]");
+  const sw = document.querySelectorAll("[data-f]"), fstep = document.getElementById("fstep");
+  let fstate = "after";
+  const fmt = v => v.toFixed(1).replace(".0", "") + "%";
+  function setFunnel(state, caption) {
+    if (caption) fstep.textContent = caption;
+    if (state === fstate) return;
+    const from = data[fstate], to = data[state];
+    fstate = state;
+    sw.forEach(x => x.setAttribute("aria-pressed", x.dataset.f === state));
+    to.forEach((v, i) => { fills[i].style.width = v + "%"; });
+    if (reduce) { to.forEach((v, i) => vals[i].textContent = fmt(v)); return; }
+    const t0 = performance.now();
+    (function tick(now) {
+      const k = Math.min(1, (now - t0) / 700), e = 1 - Math.pow(1 - k, 3);
+      to.forEach((v, i) => vals[i].textContent = fmt(from[i] + (v - from[i]) * e));
+      if (k < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  sw.forEach(b => b.addEventListener("click", () => setFunnel(b.dataset.f,
+    b.dataset.f === "before" ? "Before: fewer than 10% of visitors invited a friend." : "After: with invites in transfers, almost 20% of visitors invite a friend.")));
+
+  // Кейс: какой шаг в центре экрана, такое и состояние воронки
+  const steps = [...document.querySelectorAll(".scrolly .steps li")];
+  if ("IntersectionObserver" in window) {
+    const so = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      steps.forEach(s => s.classList.toggle("active", s === e.target));
+      setFunnel(e.target.dataset.state, e.target.dataset.caption);
+    }), { rootMargin: "-45% 0px -45% 0px" });
+    steps.forEach(s => so.observe(s));
+  }
+
+  // Появление при прокрутке + счётчики в «Результатах»
+  document.querySelectorAll("section h2, section .lead, .principle, .app, .skills, .job, .funnel")
+    .forEach(el => { if (!el.closest(".contact")) el.classList.add("reveal"); });
+  const reveals = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    reveals.forEach(el => el.classList.add("in"));
+  } else {
+    const ro = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      e.target.querySelectorAll(":scope > [data-count]").forEach(countUp);
+      ro.unobserve(e.target);
+    }), { threshold: 0.2 });
+    reveals.forEach(el => ro.observe(el));
+  }
+
+  // Линия опыта рисуется по мере прокрутки
+  const tl = document.querySelector(".timeline");
+  if (!reduce) {
+    const draw = () => {
+      const r = tl.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (innerHeight * 0.7 - r.top) / r.height));
+      tl.style.setProperty("--p", p.toFixed(3));
+    };
+    addEventListener("scroll", draw, { passive: true });
+    draw();
+  }
+
+  // Опыт: раскрыть / свернуть
+  document.querySelectorAll(".job > button").forEach(b => b.addEventListener("click", () => {
+    const open = b.getAttribute("aria-expanded") !== "true";
+    b.setAttribute("aria-expanded", open);
+    b.nextElementSibling.hidden = !open;
+    b.querySelector(".toggle").textContent = open ? "Collapse" : "Details";
+  }));
+
+})();
+</script>
+</body>
+</html>

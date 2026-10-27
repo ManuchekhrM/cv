@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Манучехр Мелибаев — руководитель IT-проектов</title>
 <meta name="description" content="Руководитель IT-проектов и Product Owner в банковском финтехе. Три Scrum-команды до 21 человека, Core Banking, программа лояльности.">
+<link rel="alternate" hreflang="ru" href="https://manuchekhrm.github.io/cv/">
+<link rel="alternate" hreflang="en" href="https://manuchekhrm.github.io/cv/en.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
@@ -57,6 +59,10 @@ section { padding: 72px 0; border-top: 1px solid var(--line); }
 .btn.small { padding: 8px 14px; font-size: 14px; }
 .btn:hover { filter: brightness(1.08); }
 .theme { background: none; border: 1px solid var(--line); color: var(--ink); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 16px; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.lang a { font: 600 13px var(--text); padding: 5px 10px; border-radius: 999px; color: var(--muted); text-decoration: none; }
+.lang a[aria-current] { background: var(--pine); color: var(--paper); }
+.lang a:hover:not([aria-current]) { color: var(--ink); }
 
 /* Первый экран */
 .hero { padding: 64px 0 56px; border-top: 0; }
@@ -273,6 +279,9 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
   section { padding: 56px 0; }
 }
 @media (max-width: 480px) {
+  .nav .wrap { gap: 8px; }
+  .nav .btn.small { padding: 8px 12px; }
+  .lang a { padding: 5px 8px; }
   .wrap { padding: 0 16px; }
   .result { grid-template-columns: 1fr; gap: 2px; }
   .tab { font-size: 14px; padding: 9px 4px; white-space: normal; line-height: 1.25; }
@@ -307,6 +316,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
     <a class="link" href="#case">Кейс</a>
     <a class="link" href="#career">Опыт</a>
     <a class="link" href="#lead">Как руковожу</a>
+    <div class="lang" aria-label="Язык"><a aria-current="page">RU</a><a href="en.html" hreflang="en" lang="en">EN</a></div>
     <button class="theme" id="theme" aria-label="Сменить тему">◐</button>
     <a class="btn small" href="#contact">Связаться</a>
   </div>
