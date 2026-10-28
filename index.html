@@ -305,6 +305,116 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
   .contact { background: #fff; color: #000; }
   .contact h2, .contact .lead { color: #000; }
 }
+
+/* Первый экран: сцена целиком, текст сверху и снизу */
+.hero { padding: 28px 0 56px; }
+.hero-grid { grid-template-columns: 1fr; }
+.hcard { position: relative; overflow: hidden; isolation: isolate; border-radius: 32px; background: #12392D; aspect-ratio: 1280 / 713; display: flex; flex-direction: column; justify-content: space-between; text-align: center; color: #F3F6F3; }
+.hcard picture, .hcard .hbg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hcard .hbg { object-fit: cover; z-index: -2; }
+.hcard picture { z-index: -2; }
+.hcard::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(180deg, rgba(18,57,45,.96) 0%, rgba(18,57,45,.9) 12%, rgba(18,57,45,.35) 17%, rgba(18,57,45,0) 20%),
+  linear-gradient(0deg, #12392D 0%, rgba(18,57,45,.92) 20%, rgba(18,57,45,.45) 25%, rgba(18,57,45,0) 28%); }
+.hcard .htop { padding: 24px 32px 0; }
+.hcard h1 { font: 700 44px/1.04 var(--display); letter-spacing: -.02em; color: #FFFFFF; margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,.25); }
+.hcard h1 span { display: inline; }
+.hcard .hbottom { padding: 0 32px 22px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hcard .role { color: #8FE0BE; font-weight: 500; font-size: 18px; margin: 0; max-width: none; }
+.hcard .lead { font-size: 15px; color: rgba(243,246,243,.88); margin: 0; max-width: none; }
+.hcard .actions { justify-content: center; margin-top: 2px; }
+.hcard .btn { background: #FFFFFF; color: #12392D; border-color: #FFFFFF; }
+.hcard .btn.ghost { background: transparent; color: #FFFFFF; border-color: rgba(255,255,255,.6); }
+.hcard .soon { position: absolute; left: 22px; bottom: 22px; margin: 0; background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.25); color: #FFFFFF; backdrop-filter: blur(6px); }
+@media (max-width: 860px) {
+  .hcard h1 { font-size: 34px; }
+  .hcard .soon { position: static; margin: 0 auto 10px; }
+  .hcard .htop { display: flex; flex-direction: column; align-items: center; }
+}
+@media (max-width: 640px) {
+  .hcard { aspect-ratio: 670 / 1160; border-radius: 24px; }
+  .hcard::before { background:
+    linear-gradient(180deg, rgba(18,57,45,.94) 0%, rgba(18,57,45,.9) 31%, rgba(18,57,45,.3) 38%, rgba(18,57,45,0) 42%),
+    linear-gradient(0deg, #12392D 0%, rgba(18,57,45,.94) 27%, rgba(18,57,45,.45) 34%, rgba(18,57,45,0) 39%); }
+  .hcard .htop { padding: 20px 16px 0; }
+  .hcard h1 { font-size: 30px; line-height: 1.05; }
+  .hcard h1 span { display: block; }
+  .hcard .hbottom { padding: 0 16px 16px; gap: 8px; }
+  .hcard .role { font-size: 14px; }
+  .hcard .lead { font-size: 14px; line-height: 1.45; }
+  .hcard .actions { width: 100%; flex-wrap: nowrap; }
+  .hcard .actions .btn { flex: 1; justify-content: center; padding: 12px 10px; }
+  .nav .mono { white-space: nowrap; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hcard .htop h1, .hcard .hbottom { animation: hin .8s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes hin { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .hcard .hbottom { animation-delay: .15s; }
+  .hcard .soon { animation: hfade .8s ease .3s both; }
+  @keyframes hfade { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* Дизайн-ревью: заливки для тёмной темы */
+:root { --fill: #1F6B52; --on-fill: #F3F6F3; }
+:root[data-theme="dark"] { --fill: #1A4A3B; }
+.mentor { background: var(--fill); color: var(--on-fill); }
+.mentor h3 { color: #FFFFFF; }
+.mentor p { color: color-mix(in srgb, var(--on-fill) 82%, transparent); }
+.contact { background: var(--fill); color: var(--on-fill); }
+.contact h2 { color: #FFFFFF; }
+.contact .lead { color: color-mix(in srgb, var(--on-fill) 80%, transparent); }
+.contact .btn { background: #FFFFFF; color: #12392D; border-color: #FFFFFF; }
+.contact .btn.ghost { background: transparent; color: #FFFFFF; border-color: rgba(255,255,255,.6); }
+.contact-line { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 18px 0 0; font-size: 15px; }
+.contact-line a { color: #FFFFFF; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* Карточки: обычная — рамка 1px, акцент — заливка */
+.pillars { border-top: 1px solid var(--line); }
+.edu-card { border-top: 1px solid var(--line); }
+.app { background: var(--surface); border: 1px solid var(--line); }
+.app .soon-tag { background: var(--pine-soft); }
+
+/* Заголовки разделов в одном стиле */
+.hero-grid .pillars-q { grid-column: 1 / -1; margin: 0 0 10px; font-size: clamp(22px, 2.4vw, 28px); color: var(--ink); }
+.two-h { grid-column: 1 / -1; margin-bottom: 0; }
+.col-h { font-size: clamp(22px, 2.4vw, 28px); }
+
+/* Результаты: награда компактнее */
+.award { grid-template-columns: 2fr 3fr; }
+
+/* Кейс: фото на всю ширину, шаги плотнее и читаемее */
+.shot { max-width: none; }
+.shot img { aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 62%; }
+@media (min-width: 861px) and (prefers-reduced-motion: no-preference) {
+  .case.scrolly .steps li { min-height: 34vh; opacity: .6; }
+}
+
+/* Футболка — шестая ячейка принципов */
+/* Принципы: 3 + 2 без пустой клетки, футболка — широкой полосой под ними */
+.principles { grid-template-columns: repeat(6, 1fr); }
+.principle { grid-column: span 2; }
+.principle:nth-child(4), .principle:nth-child(5) { grid-column: span 3; }
+.principle.perk { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); grid-template-rows: auto auto; column-gap: 32px; align-items: center; margin-top: 12px; }
+.principle.perk img { grid-row: 1 / 3; display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; }
+.principle.perk h3 { align-self: end; }
+.principle.perk p { align-self: start; max-width: 52ch; }
+@media (max-width: 860px) {
+  .principles { grid-template-columns: 1fr; }
+  .principle, .principle:nth-child(4), .principle:nth-child(5) { grid-column: 1 / -1; }
+  .principle.perk { grid-template-columns: 1fr; }
+  .principle.perk img { grid-row: auto; margin-bottom: 14px; }
+}
+
+/* Опыт: кнопка «Ещё N» только на телефоне */
+.job .more { display: none; }
+@media (max-width: 640px) {
+  .job ul.clamp li:nth-child(n+4) { display: none; }
+  .job .more { display: inline-flex; align-items: center; min-height: 44px; margin: -6px 0 16px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--pine); font: 600 14px var(--text); cursor: pointer; }
+  .mentor { grid-template-columns: 1fr; gap: 10px; padding: 22px 20px; }
+  .mentor > b { font-size: 34px; }
+  .award img { max-height: 200px; object-fit: cover; }
+}
+@media print { .job ul.clamp li { display: list-item !important; } .job .more { display: none !important; } }
 </style>
 </head>
 <body>
@@ -324,25 +434,27 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
 
 <header class="hero" id="top">
   <div class="wrap hero-grid">
-    <div class="intro">
-      <a class="soon" href="#app"><img src="img/app-icon.webp" alt="" width="26" height="26"><span>Скоро</span><em>Моё приложение «Мои Финансы»</em></a>
-      <div class="now"><i></i>Сейчас: Product Owner команды «Лояльность», Банк Эсхата, Душанбе</div>
-      <h1><span>Манучехр</span><span>Мелибаев</span></h1>
-      <p class="role">Руководитель IT-проектов и Product Owner в банковском финтехе</p>
-      <p class="lead">5 лет веду команды, которые запускают продукты и держат сроки: от цифрового банкинга для бизнеса в Alif Business до программы лояльности банка Эсхата. Умею одновременно управлять людьми, считать экономику продукта и разбираться в технической части.</p>
-      <div class="actions">
-        <a class="btn" href="#contact">Связаться</a>
-        <a class="btn ghost" href="cv-melibaev.pdf" download="CV_Мелибаев_Манучехр.pdf">Скачать PDF</a>
+    <div class="hcard">
+      <picture>
+        <source media="(max-width: 640px)" srcset="img/hero-stage-m.jpg">
+        <img class="hbg" src="img/hero-stage-d.jpg" alt="Манучехр Мелибаев на сцене QBR Q1 2026 банка Эсхата" width="1280" height="713">
+      </picture>
+      <div class="htop">
+        <a class="soon" href="#app"><img src="img/app-icon.webp" alt="" width="26" height="26"><span>Скоро</span><em>«Мои Финансы»</em></a>
+        <h1><span>Манучехр</span> <span>Мелибаев</span></h1>
+      </div>
+      <div class="hbottom">
+        <p class="role">Руководитель IT-проектов · Product Owner</p>
+        <p class="lead">5 лет веду команды разработки: от Alif Business до программы лояльности банка Эсхата.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Связаться</a>
+          <a class="btn ghost" href="cv-melibaev.pdf" download="CV_Мелибаев_Манучехр.pdf">Скачать PDF</a>
+        </div>
       </div>
     </div>
 
-    <figure class="portrait">
-      <img src="img/photo-qbr.jpg" alt="Манучехр Мелибаев на сцене QBR Q1 2026 банка Эсхата" width="1280" height="853">
-      <figcaption>QBR Q1 2026, банк Эсхата</figcaption>
-    </figure>
-
     <div class="pillars" id="pillars">
-      <p class="pillars-q">Чем я полезен команде</p>
+      <h2 class="pillars-q">Чем я полезен команде</h2>
       <div class="tabs" role="tablist" aria-label="Сильные стороны">
         <button class="tab" role="tab" id="t-people" aria-controls="p-people" aria-selected="true">Веду людей<span class="bar"></span></button>
         <button class="tab" role="tab" id="t-money" aria-controls="p-money" aria-selected="false" tabindex="-1">Считаю продукт<span class="bar"></span></button>
@@ -383,6 +495,16 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
 <section id="results">
   <div class="wrap">
     <h2>Результаты в цифрах</h2>
+    <div class="results">
+      <div class="result reveal from-left"><b data-count="90" data-prefix="−70–" data-suffix="%">−70–90%</b><div>ручной отчётности и сверок в Alif Business — цифровом банке для предпринимателей<span>Алиф Банк</span></div></div>
+      <div class="result reveal from-right"><b data-count="200" data-prefix="+" data-suffix="%">+200%</b><div>участников программы «Рекомендуйте и заработайте» за месяц: теперь друга можно пригласить прямо из денежного перевода<span>Банк Эсхата</span></div></div>
+      <div class="result reveal from-left"><b data-count="25" data-prefix="−" data-suffix="%">−25%</b><div>ручных операционных процессов за счёт автоматизации<span>Алиф Банк</span></div></div>
+      <div class="result reveal from-right"><b data-count="2" data-prefix="×">×2</b><div>доля клиентов, которые зашли в программу «Рекомендуйте и заработайте» и пригласили друга<span>Банк Эсхата</span></div></div>
+      <div class="result reveal from-left"><b data-count="95" data-prefix="&gt;" data-suffix="%">&gt;95%</b><div>релизов вышли в срок без серьёзных сбоев у клиентов<span>Алиф Банк</span></div></div>
+      <div class="result reveal from-right"><b data-count="14" data-suffix="%">14%</b><div>экономии бюджета на кешбэк: разобрал, за какие покупки банк платил кешбэк без пользы для себя, и изменил правила начисления<span>Банк Эсхата</span></div></div>
+      <div class="result reveal from-left"><b data-count="2" data-prefix="×">×2</b><div>быстрее подключение магазинов-партнёров к Alif Business<span>Алиф Банк</span></div></div>
+      <div class="result reveal from-right"><b data-count="100" data-suffix="%">100%</b><div>стратегических инициатив квартала выполнены в срок<span>Банк Эсхата</span></div></div>
+    </div>
     <div class="award reveal">
       <img src="img/award.jpg" alt="Награда «Лучшая фича 2025» и диплом банка Эсхата за Wake up bonus" width="1024" height="768" loading="lazy">
       <div>
@@ -394,16 +516,6 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
     <div class="mentor reveal">
       <b>2 PO</b>
       <div><h3>Веду наставничество двух Product Owner</h3><p>Помогаю Product Owner других команд банка расти в бизнесе и в технической части, чтобы они уверенно вели продукт сами.</p></div>
-    </div>
-    <div class="results">
-      <div class="result reveal from-left"><b data-count="90" data-prefix="−70–" data-suffix="%">−70–90%</b><div>ручной отчётности и сверок в Alif Business — цифровом банке для предпринимателей<span>Алиф Банк</span></div></div>
-      <div class="result reveal from-right"><b data-count="200" data-prefix="+" data-suffix="%">+200%</b><div>участников программы «Рекомендуйте и заработайте» за месяц: теперь друга можно пригласить прямо из денежного перевода<span>Банк Эсхата</span></div></div>
-      <div class="result reveal from-left"><b data-count="25" data-prefix="−" data-suffix="%">−25%</b><div>ручных операционных процессов за счёт автоматизации<span>Алиф Банк</span></div></div>
-      <div class="result reveal from-right"><b data-count="2" data-prefix="×">×2</b><div>доля клиентов, которые зашли в программу «Рекомендуйте и заработайте» и пригласили друга<span>Банк Эсхата</span></div></div>
-      <div class="result reveal from-left"><b data-count="95" data-prefix="&gt;" data-suffix="%">&gt;95%</b><div>релизов вышли в срок без серьёзных сбоев у клиентов<span>Алиф Банк</span></div></div>
-      <div class="result reveal from-right"><b data-count="14" data-suffix="%">14%</b><div>экономии бюджета на кешбэк: разобрал, за какие покупки банк платил кешбэк без пользы для себя, и изменил правила начисления<span>Банк Эсхата</span></div></div>
-      <div class="result reveal from-left"><b data-count="2" data-prefix="×">×2</b><div>быстрее подключение магазинов-партнёров к Alif Business<span>Алиф Банк</span></div></div>
-      <div class="result reveal from-right"><b data-count="100" data-suffix="%">100%</b><div>стратегических инициатив квартала выполнены в срок<span>Банк Эсхата</span></div></div>
     </div>
   </div>
 </section>
@@ -518,27 +630,25 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       <div class="principle"><h3>Защищаю команду</h3><p>Добиваюсь для людей лучших условий, вплоть до разговора один на один с руководством.</p></div>
       <div class="principle"><h3>Развиваю людей</h3><p>Помогаю каждому расти по его карьерному треку и веду наставничество двух Product Owner банка.</p></div>
       <div class="principle"><h3>Договорённость — с результатом и датой</h3><p>В работе с другими командами «в процессе» — не статус. К сроку должен быть конкретный результат.</p></div>
-    </div>
-    <div class="team-perk reveal">
-      <img src="img/tshirt.jpg" alt="Брендированная футболка команды: Эсхата Loyalty, на спине Loyalty builds value" width="1280" height="777" loading="lazy">
-      <div><h3>Своя футболка команды — единственная в банке</h3><p>Добился для «Лояльности» собственной фирменной футболки: «Loyalty builds value. Доверие. Выгода. Отношения». Вроде бы мелочь, но для команды это знак: её ценят, и это видит весь банк.</p></div>
+      <div class="principle perk"><img src="img/tshirt.jpg" alt="Брендированная футболка команды: Эсхата Loyalty, на спине Loyalty builds value" width="1280" height="777" loading="lazy"><h3>Своя футболка команды — единственная в банке</h3><p>Добился для «Лояльности» собственной фирменной футболки: «Loyalty builds value. Доверие. Выгода. Отношения». Вроде бы мелочь, но для команды это знак: её ценят, и это видит весь банк.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap two">
+    <h2 class="two-h">Свой продукт</h2>
     <div class="app" id="app">
       <div>
         <p class="soon-tag">Скоро в App Store и Google Play</p>
-        <div class="app-title"><img src="img/app-icon.webp" alt="Иконка приложения «Мои Финансы»" width="52" height="52"><h3>Свой продукт: «Мои Финансы»</h3></div>
+        <div class="app-title"><img src="img/app-icon.webp" alt="Иконка приложения «Мои Финансы»" width="52" height="52"><h3>«Мои Финансы»</h3></div>
         <p>Мобильное приложение для учёта личных финансов. Прошёл весь путь сам: план первой версии (MVP), дизайн, разработка с ИИ-инструментами, 145 автотестов.</p>
         <div class="tags"><span>Flutter</span><span>iOS и Android</span><span>Claude Code</span><span>Автотесты</span></div>
       </div>
       <div class="phone"><img src="img/app-home.webp" alt="Главный экран приложения «Мои Финансы»: баланс, доходы, расходы по категориям" width="920" height="2000" loading="lazy"></div>
     </div>
     <div>
-      <h3>Навыки</h3>
+      <h2 class="col-h">Навыки</h2>
       <dl class="skills">
         <dt>Управление</dt><dd>Несколько параллельных проектов и команд, Agile, Scrum и SAFe, планирование релизов, риски, делегирование, развитие людей, работа с топ-менеджментом.</dd>
         <dt>Продукт и экономика</dt><dd>Discovery, проверка гипотез, приоритизация, метрики: активные пользователи (MAU), удержание, стоимость привлечения (CAC), новые клиенты (NTB) и продукты (NTP), активная клиентская база, P&amp;L продукта, основы A/B-тестов.</dd>
@@ -548,7 +658,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       </dl>
     </div>
     <div class="edu-card">
-      <h3>Образование</h3>
+      <h2 class="col-h">Образование</h2>
       <ol class="edu">
         <li><span class="edu-deg">Второе высшее</span><span class="edu-years">2026 — сейчас</span><strong>Программное обеспечение и разработка ПО</strong><em>Таджикский технический университет имени академика М. С. Осими</em></li>
         <li><span class="edu-deg">Магистратура</span><span class="edu-years">2018 — 2020</span><strong>Социальная работа</strong><em>Таджикский национальный университет</em></li>
@@ -569,6 +679,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       <a class="icon-btn" href="https://t.me/im_melibaev" target="_blank" rel="noopener" aria-label="Написать в Telegram @im_melibaev" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#26A5E4"/><path fill="#fff" d="M5.4 11.8l11.6-4.5c.54-.2 1.01.13.84.95l-1.98 9.3c-.15.66-.54.82-1.1.51l-3.03-2.23-1.46 1.41c-.16.16-.3.3-.62.3l.22-3.08 5.6-5.06c.24-.22-.05-.34-.38-.13l-6.92 4.36-2.98-.93c-.65-.2-.66-.65.14-.96z"/></svg></a>
       <a class="btn ghost" href="cv-melibaev.pdf" download="CV_Мелибаев_Манучехр.pdf">Скачать PDF</a>
     </div>
+    <p class="contact-line"><a href="mailto:immelibaev@gmail.com">immelibaev@gmail.com</a><a href="https://t.me/im_melibaev" target="_blank" rel="noopener">t.me/im_melibaev</a></p>
     <p class="print-only">immelibaev@gmail.com · linkedin.com/in/manuchekhr-melibaev-bb4a3221b · t.me/im_melibaev</p>
   </div>
 </section>
@@ -710,6 +821,19 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
     b.nextElementSibling.hidden = !open;
     b.querySelector(".toggle").textContent = open ? "Свернуть" : "Подробнее";
   }));
+
+  // Опыт на телефоне: первые 3 пункта, остальные по кнопке
+  document.querySelectorAll(".job .body ul").forEach(ul => {
+    const extra = ul.children.length - 3;
+    if (extra < 1) return;
+    ul.classList.add("clamp");
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "more";
+    const label = () => b.textContent = ul.classList.contains("clamp") ? "Ещё " + extra + (document.documentElement.lang === "en" ? " more" : "") : "Свернуть";
+    label();
+    b.addEventListener("click", () => { ul.classList.toggle("clamp"); label(); });
+    ul.after(b);
+  });
 
 })();
 </script>
