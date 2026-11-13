@@ -416,6 +416,18 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
   .award img { max-height: 200px; object-fit: cover; }
 }
 @media print { .job ul.clamp li { display: list-item !important; } .job .more { display: none !important; } }
+
+/* Свои проекты: TajHoney и сервер */
+.proj { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 28px 32px; }
+.proj h3 { font-size: clamp(20px, 2vw, 24px); margin-bottom: 10px; }
+.proj p { max-width: 58ch; }
+.proj-shot { display: block; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 34px rgba(26,45,41,.16); }
+.proj-shot img { display: block; width: 100%; height: auto; }
+.proj-link { display: inline-block; margin-top: 16px; font-weight: 600; color: var(--pine); }
+.soon-tag.live { background: var(--pine-soft); }
+.proj.server { grid-template-columns: 1fr; padding: 24px 32px; }
+.proj.server p { max-width: 90ch; }
+@media (max-width: 860px) { .proj { grid-template-columns: 1fr; padding: 20px; } }
 </style>
 </head>
 <body>
@@ -446,7 +458,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
       </div>
       <div class="hbottom">
         <p class="role">IT Project Lead · Product Owner</p>
-        <p class="lead">5 years leading development teams: from Alif Business to Eskhata Bank’s loyalty program.</p>
+        <p class="lead">5+ years leading development teams: from Alif Business to Eskhata Bank’s loyalty program.</p>
         <div class="actions">
           <a class="btn" href="#contact">Contact</a>
           <a class="btn ghost" href="cv-melibaev-en.pdf" download="CV_Manuchekhr_Melibaev.pdf">Download PDF</a>
@@ -484,7 +496,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
           <li>Took on selected back-end tasks for the partner platform at Alif Bank.</li>
           <li>Building my own mobile app in Flutter with AI tools.</li>
           <li>I speak the architects’ language: ADR, C4, service design.</li>
-          <li>Setting up my own server for my apps and websites, plus a personal cloud storage.</li>
+          <li>Set up my own server that runs this website and the TajHoney online store.</li>
         </ul>
       </div>
       </div>
@@ -638,7 +650,7 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
 
 <section>
   <div class="wrap two">
-    <h2 class="two-h">My own product</h2>
+    <h2 class="two-h">My own projects</h2>
     <div class="app" id="app">
       <div>
         <p class="soon-tag">Coming soon to the App Store and Google Play</p>
@@ -647,6 +659,23 @@ footer { padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
         <div class="tags"><span>Flutter</span><span>iOS and Android</span><span>Claude Code</span><span>Automated tests</span></div>
       </div>
       <div class="phone"><img src="img/app-home.webp" alt="Home screen of the “My Finances” app: balance, income and expenses by category" width="920" height="2000" loading="lazy"></div>
+    </div>
+    <div class="proj">
+      <a class="proj-shot" href="https://tajhoney.tj/en" target="_blank" rel="noopener"><img src="img/proj-tajhoney.jpg" alt="TajHoney online store home page" width="1200" height="750" loading="lazy"></a>
+      <div>
+        <p class="soon-tag live">Live · tajhoney.tj</p>
+        <h3>TajHoney — online honey store</h3>
+        <p>A store for a family apiary: storefront in Russian, Tajik and English, its own admin panel, loyalty and promo codes, Telegram login and order notifications. I took it from spec to launch myself, with AI tools.</p>
+        <div class="tags"><span>Next.js</span><span>Payload CMS</span><span>PostgreSQL</span><span>Telegram bot</span></div>
+        <a class="proj-link" href="https://tajhoney.tj/en" target="_blank" rel="noopener">Open the site</a>
+      </div>
+    </div>
+    <div class="proj server">
+      <div>
+        <h3>My own server</h3>
+        <p>Set up a home server that runs my projects — this website and TajHoney: Ubuntu and Docker, disk encryption, publishing through Cloudflare Tunnel with no open ports, daily backups and monitoring with Telegram alerts.</p>
+        <div class="tags"><span>Ubuntu</span><span>Docker</span><span>Cloudflare</span><span>Backups</span></div>
+      </div>
     </div>
     <div>
       <h2 class="col-h">Skills</h2>
