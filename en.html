@@ -471,6 +471,19 @@ a.hchip::after { content: "→"; color: #F0B941; font-size: 18px; margin-left: 2
 #projects { scroll-margin-top: 90px; }
 @media (max-width: 1000px) { .hchips { position: static; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; } .hchip { height: 56px; } }
 @media (prefers-reduced-motion: no-preference) { .hcard .hchips { animation: hfade .8s ease .3s both; } }
+
+/* «4 команды» и «21 человек» рядом */
+.bigs { display: flex; flex-direction: column; gap: 18px; }
+.bigs .big + .big { padding-top: 18px; border-top: 1px solid var(--line); }
+@media (max-width: 860px) { .bigs { flex-direction: row; gap: 20px; } .bigs .big { flex: 1; } .bigs .big + .big { padding: 0 0 0 20px; border-top: 0; border-left: 1px solid var(--line); } }
+
+/* Опыт: заметная кнопка раскрытия */
+.job .toggle { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px 6px 14px; border-radius: 999px; background: var(--pine-soft); border: 1px solid color-mix(in srgb, var(--pine) 30%, transparent); color: var(--pine); font-weight: 600; font-size: 14px; white-space: nowrap; transition: background .2s, color .2s; }
+.job .toggle::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .25s; }
+.job > button[aria-expanded="true"] .toggle::after { transform: translateY(2px) rotate(-135deg); }
+.job > button:hover .toggle, .job > button:focus-visible .toggle { background: var(--pine); color: var(--paper); }
+.job > button:hover h3 { color: var(--pine); }
+@media (max-width: 760px) { .job .toggle { margin-top: 6px; } }
 </style>
 </head>
 <body>
@@ -518,7 +531,7 @@ a.hchip::after { content: "→"; color: #F0B941; font-size: 18px; margin-left: 2
       </div>
       <div class="panels">
       <div class="panel on" role="tabpanel" id="p-people" aria-labelledby="t-people">
-        <div class="big"><span data-count="21">21</span><small>people in three development teams of the core banking system</small></div>
+        <div class="bigs"><div class="big"><span data-count="4">4</span><small>development teams led in parallel</small></div><div class="big"><span data-count="21">21</span><small>people in the core banking system teams</small></div></div>
         <ul>
           <li>Currently leading a team of 11.</li>
           <li>Mentoring two Product Owners, helping them grow on the business and technical side.</li>
@@ -840,7 +853,7 @@ a.hchip::after { content: "→"; color: #F0B941; font-size: 18px; margin-left: 2
       panel.classList.toggle("on", on);
       panel.inert = !on;
       panel.setAttribute("aria-hidden", !on);
-      if (on && !was) countUp(panel.querySelector("[data-count]"));
+      if (on && !was) panel.querySelectorAll("[data-count]").forEach(countUp);
       const bar = t.querySelector(".bar");
       bar.style.transition = "none"; bar.style.width = "0";
       if (on && !stopped) { bar.offsetWidth; bar.style.transition = `width ${SHOW_MS}ms linear`; bar.style.width = "100%"; }
@@ -860,7 +873,7 @@ a.hchip::after { content: "→"; color: #F0B941; font-size: 18px; margin-left: 2
   document.getElementById("pillars").addEventListener("pointerenter", () => { if (!stopped) { clearInterval(timer); } });
   document.getElementById("pillars").addEventListener("pointerleave", () => { if (!stopped) { timer = setInterval(() => select((current + 1) % tabs.length), SHOW_MS); select(current); } });
   select(0);
-  setTimeout(() => countUp(document.querySelector("#p-people [data-count]")), 500);
+  setTimeout(() => document.querySelectorAll("#p-people [data-count]").forEach(countUp), 500);
   if (!stopped) timer = setInterval(() => select((current + 1) % tabs.length), SHOW_MS);
 
   // Воронка До / После: столбики и проценты меняются плавно
